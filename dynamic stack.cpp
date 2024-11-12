@@ -21,9 +21,9 @@ public:
     Stack();
     virtual ~Stack();
     Stack(const Stack<T>& other);
-    T& operator=(const Stack<T>& other);
+    Stack<T>& operator=(const Stack<T>& other);
     Stack(Stack<T>&& other);
-    T& operator=(Stack<T>&& other);
+    Stack<T>& operator=(Stack<T>&& other);
 };
 
 
@@ -110,7 +110,7 @@ inline Stack<T>::Stack(const Stack<T> &other)
 }
 
 template <class T>
-inline T& Stack<T>::operator=(const Stack<T> &other)
+inline Stack<T>& Stack<T>::operator=(const Stack<T> &other)
 {
     if(&other!=this){
         Free();
@@ -126,7 +126,7 @@ inline Stack<T>::Stack(Stack<T> &&other)
 }
 
 template <class T>
-inline T &Stack<T>::operator=(Stack<T> &&other)
+inline Stack<T> &Stack<T>::operator=(Stack<T> &&other)
 {
     if(&other!=this){
         Free();
